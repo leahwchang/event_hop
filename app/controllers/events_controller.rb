@@ -25,7 +25,7 @@ class EventsController < ApplicationController
 
   def create
     @event = @place.events.new(event_params)
-    # if Time.now < @event.start
+    if Time.now < @event.start
       if @event.save
         # grabbing emails from event creation form
         # passing it in as an array of individual strings
@@ -38,12 +38,12 @@ class EventsController < ApplicationController
       else
         redirect_to :back, notice: "there was a problem"
       end
-    # else
+    else
 
       # need to not save the event when there is a problem
 
-    #   redirect_to :back, notice: "there was a problem"
-    # end
+      redirect_to :back, notice: "there was a problem"
+    end
   end
 
   def join

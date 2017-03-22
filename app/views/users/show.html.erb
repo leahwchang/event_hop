@@ -23,7 +23,7 @@
 						<% if Time.now < event.start %>
 							<p><%= event.description %></p>
 							<p><%# event.place.name %></p>
-							<p><%= event.start %></p>
+							<p><%= event.start.strftime("%m/%d/%Y %A %I:%M%p") %></p>
 							<%= link_to 'See the event', event_path(event) %>
 							<hr>
 						<% end %>
@@ -34,24 +34,24 @@
    				<% @joined_events.each do |event| %>
             <p><%= event.description %></p>
             <p><%# event.place.name %></p>
-            <p><%= event.start %></p>
+            <p><%= event.start.strftime("%m/%d/%Y %A %I:%M%p") %></p>
             <%= link_to 'See the event', event_path(event) %>
             <hr>
           <% end %>
-					
+
 					<h1>Your Passed Events</h1>
 					<% @user.events.each do |event| %>
 						<% if Time.now > event.start %>
 							<p><%= event.description %></p>
 							<p><%# event.place.name %></p>
-							<p><%= event.start %></p>  
+							<p><%= event.start.strftime("%m/%d/%Y %A %I:%M%p") %></p>
 							<%= link_to 'See the event', event_path %>
 					 		<hr>
 						<% end %>
 					<% end %>
-			</div><!-- column -->	
-		
-		</div><!-- row -->	
+			</div><!-- column -->
+
+		</div><!-- row -->
 	</div><!-- table -->
 
 </div> <!-- container -->

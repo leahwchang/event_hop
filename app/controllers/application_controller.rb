@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
  	protected
 
+ 	# store location of previous page
+ 	# params[:continue] is for joining event (@event page)
 	def store_location
 		puts "Storing: #{params[:continue]}"
 	    if params[:continue] # =~ /\/(events\/[0-9])\z/ # safelist
@@ -30,7 +32,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:account_update) { |params|
+		devise_parameter_sanitizer.permit(:account_update) { |params|
 	    params.permit(
 	      :email, :password, :password_confirmation, :fname,
 	      :lname, :current_password, :profilepic
@@ -40,7 +42,7 @@ class ApplicationController < ActionController::Base
 
 	def authenticate_admin!
 		unless current_user[params[:admin]] == true
-			
+
 		end
 	end
 

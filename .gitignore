@@ -18,3 +18,5 @@
 .rbenv-vars
 
 /public/system/*
+
+.DS_Store

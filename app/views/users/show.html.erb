@@ -45,7 +45,7 @@
 							<p><%= event.description %></p>
 							<p><%# event.place.name %></p>
 							<p><%= event.start.strftime("%m/%d/%Y %A %I:%M%p") %></p>
-							<%= link_to 'See the event', event_path %>
+							<%= link_to 'See the event', event_path(event) %>
 					 		<hr>
 						<% end %>
 					<% end %>

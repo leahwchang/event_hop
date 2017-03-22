@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+# gem 'rails', '4.2.4'
+gem 'rails', '~> 4.2', '>= 4.2.6'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -30,7 +31,8 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 # gem 'passenger'
 gem 'bootstrap-sass', '~> 3.3.5'
-gem 'aws-sdk', '< 2.0'
+# gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '~> 2.8', '>= 2.8.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -62,5 +64,3 @@ group :production do
 end
 
 gem 'rails_12factor', group: :production
-
-ruby "2.1.2"

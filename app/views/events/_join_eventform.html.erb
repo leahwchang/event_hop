@@ -1,12 +1,14 @@
+<!-- if there is no current user, show the join event option, continues to the event page -->
 <% if current_user == nil %>
     <div id="join" title="join">
         <p><%= link_to 'sign in/sign up to join this event', join_event_path(@event, continue: event_url(@event)), method: :post %></p>
     </div>
 <% else %>
-    
+  <!-- if there is a current user, and user is already in the event, show leave event option -->
     <% if @event.users.include? current_user %>
         <p class="joinleave"><%= link_to 'leave this event', leave_event_path(@event), method: :delete %></p>
     <% end %>
+  <!-- if there is a current user, and user is no in the event, show join event option, continues to the event page -->
     <% if @event.users.exclude? current_user %>
     <p class="joinleave"><%= link_to 'join event now', join_event_path(@event, continue: event_url(@event)), method: :post %></p>
     <% end %>

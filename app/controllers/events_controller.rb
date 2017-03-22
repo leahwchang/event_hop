@@ -8,13 +8,13 @@ class EventsController < ApplicationController
   end
 
   def index
- @posts = Post.last(10).reverse
+    @posts = Post.last(10).reverse
   end
 
   def show
     @place = @event.place
     @post = Post.new
-    
+
     # gmap below
     @hash = Gmaps4rails.build_markers(@place) do |place, marker|
       marker.lat place.latitude
@@ -25,25 +25,25 @@ class EventsController < ApplicationController
 
   def create
     @event = @place.events.new(event_params)
-    if Time.now < @event.start
-      # grabbing emails from event creation form 
-      # passing it in as an array of individual strings
-      # take out white space and split by comma
+    # if Time.now < @event.start
       if @event.save
+        # grabbing emails from event creation form
+        # passing it in as an array of individual strings
+        # take out white space and split by comma
         @emails = params[:event][:email].gsub(" ", "").split(",")
         @emails.each do |email|
-          EventMailer.invitation(current_user, email, @event).deliver
+          EventMailer.invitation(current_user, email, @event).deliver_now
         end
-        redirect_to user_path(current_user.id)
+        redirect_to user_path(current_user.id), notice: "event saved"
       else
         redirect_to :back, notice: "there was a problem"
       end
-    else
+    # else
 
-        # need to not save the event when there is a problem
+      # need to not save the event when there is a problem
 
-        redirect_to :back, notice: "there was a problem"
-    end 
+    #   redirect_to :back, notice: "there was a problem"
+    # end
   end
 
   def join
@@ -67,7 +67,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:start, :description).merge(user: current_user)
+    params.require(:event).permit(:start, :description, :email).merge(user: current_user)
   end
 
 end

@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
 	end
 
 	def configure_permitted_parameters
-		devise_parameter_sanitizer.for(:account_update) { |params|
+		devise_parameter_sanitizer.permit(:account_update) { |params|
 	    params.permit(
 	      :email, :password, :password_confirmation, :fname,
 	      :lname, :current_password, :profilepic
@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
 
 	def authenticate_admin!
 		unless current_user[params[:admin]] == true
-			
+
 		end
 	end
 

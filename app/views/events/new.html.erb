@@ -17,13 +17,13 @@
 		</div>
 
 		<div class="col-xs-6">
-				<h3>Simply Select a Time and Day to Create the Event</h3>
-				<h3>Include the emails of your friends to send out invites for them to join!</h3>
+			<h3>Simply Select a Time and Day to Create the Event</h3>
+			<h3>Include the emails of your friends to send out invites for them to join!</h3>
 			<div class="eventform">
 				<%= form_for [@place, @event] do |f| %>
 				<div class="form">
 					<%= f.label :start, "Event Start Time" %><br>
-					<%= f.datetime_select :start, {:start_year => Date.today.year,:minute_step => 15, :ampm => true} ,required: true%>
+					<%= f.datetime_select :start, {:start_year => Date.today.year,:minute_step => 15, :ampm => true} ,required: true %>
 				</div>
 
 				<div class="form">
@@ -33,7 +33,7 @@
 
 				<div class="form">
 					<%= f.label :email, "Email Your Friends an Invite!" %><br>
-					<%= f.text_area :email, required: true%>
+					<%= f.text_area :email, required: true %>
 				</div>
 
 				<div class="form">

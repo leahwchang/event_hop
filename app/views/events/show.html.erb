@@ -20,11 +20,11 @@
 				<% end %>
 				<%= render 'join_eventform' %>
 			</div>
-			
+
 			<div class="col-md-8">
 				<div class="gmaps">
-					<div style="width: 600px" center>
-						<div id="map" style="width: 100%; height: 400px"></div>
+					<div id="map-container">
+					  <div id="map-canvas"></div>
 					</div>
 				</div>
 			</div>
@@ -36,11 +36,11 @@
 	<div class="table">
 		<div class="row">
 			<div class="col-md-1"></div>
-		<!-- Shows all the posts for this event --> 
+		<!-- Shows all the posts for this event -->
 		<div class="col-md-10">
 			<%= render 'form' %>
 		</div>
-		<!-- Shows all the posts for this event --> 
+		<!-- Shows all the posts for this event -->
 		</div>
 	</div>
 </div>

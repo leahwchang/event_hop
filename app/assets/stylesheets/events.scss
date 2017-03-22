@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$headerfont: 'Josefin Sans', sans-serif; 
+$headerfont: 'Josefin Sans', sans-serif;
 $taglinefont: 'Helvetica';
 
 // -----------  Event Show Page ------------ //
@@ -12,7 +12,7 @@ $taglinefont: 'Helvetica';
 
 .eventdescription{
 	font-size: 1.5em;
-	font-family: $taglinefont; 
+	font-family: $taglinefont;
 }
 
 .attending{
@@ -21,15 +21,39 @@ $taglinefont: 'Helvetica';
 }
 
 .thumb_pic{
-	padding: 1em; 
+	padding: 1em;
 	padding-right: 0;
 	display: inline-block;
+}
+
+#map-container {
+	height: 400px;
+	border-radius: 16px 16px;
+	border-color: #fff;
+	border-style: solid;
+	box-shadow: 2px 2px 10px #B1B1B1;
+	margin-top: 25px;
+	border-width: 7px;
+}
+
+#map-canvas {
+	height: 384px;
+	width: 100%;
+}
+
+/* Bootstrap Css Map Fix*/
+#map-container #map-canvas img {
+  max-width: none;
+}
+/* Bootstrap Css Map Fix*/
+#map-container #map-canvas label {
+  width: auto; display:inline;
 }
 
 .mainchat{
 	// margin: 1em 5em 0 20%;
 	padding: 0;
-	background-color: #FBFAFC;	
+	background-color: #FBFAFC;
 	box-shadow: 5px 5px 2px #D9D9D9;
 
 	.chatheader{
@@ -62,7 +86,7 @@ $taglinefont: 'Helvetica';
 	.comments{
 		max-height: 450px;
 		max-width: 100%;
-		overflow: scroll; 
+		overflow: scroll;
 	}
 
 	.chatbox {

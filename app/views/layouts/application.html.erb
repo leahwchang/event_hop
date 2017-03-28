@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	  <!-- google font -->
-		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans|Oleo+Script' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:700|Oswald:300,500" rel="stylesheet">
 	</head>
 
 	<body>
@@ -23,17 +23,20 @@
 							<span class="glyphicon glyphicon-align-justify"></span>
 			      </button>
 			      <ul class="navbar-brand" href="#">
-							EventHop
+							Event Hop
 							<span>
-								<% if current_user.fname %>
-									Welcome! <%= current_user.fname %>
+								<% if user_signed_in? %>
+									<% if current_user.fname %>
+										Welcome! <%= current_user.fname %>
+									<% end %>
 								<% end %>
 							</span>
 						</ul>
 			    </div>
+
 			    <div class="collapse navbar-collapse" id="myNavbar">
-						<% if user_signed_in? %>
-				      <ul class="nav navbar-nav navbar-right">
+				    <ul class="nav navbar-nav navbar-right">
+							<% if user_signed_in? %>
 								<li><%= link_to 'Home', places_path %></li>
 								<li>
 									<% if current_user[:admin] == true %>
@@ -42,11 +45,11 @@
 								</li>
 				        <li><%= link_to 'Profile', user_path(current_user.id) %></li>
 				        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-				      </ul>
-						<% else %>
-							<li><%= link_to 'Sign Up', new_user_registration_path %></li>
-							<li><%= link_to 'Log In', new_user_session_path %></li>
-						<% end %>
+							<% else %>
+								<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+								<li><%= link_to 'Log In', new_user_session_path %></li>
+							<% end %>
+						</ul>
 			    </div>
 			  </div>
 			</nav>
@@ -63,18 +66,17 @@
 		</div>
 
 		<footer class="footer">
-				<br/>
-					<!-- <ul>
-						<li>
-							<%= link_to image_tag("facebook.png"), "http://www.facebook.com" %>
-						</li>
-						<li>
-							<%= link_to image_tag("twitter.png"), "http://www.twitter.com" %>
-						</li>
-						<li>
-							<%= link_to image_tag("instagram.png"), "http://www.instagram.com" %>
-						</li>
-					</ul> -->
+				<ul class="list-inline text-center">
+					<li>
+						<%= link_to image_tag("facebook.png"), "http://www.facebook.com" %>
+					</li>
+					<li>
+						<%= link_to image_tag("twitter.png"), "http://www.twitter.com" %>
+					</li>
+					<li>
+						<%= link_to image_tag("instagram.png"), "http://www.instagram.com" %>
+					</li>
+				</ul>
 		</footer>
 
 		<script type="text/javascript">

@@ -5,7 +5,7 @@ class PlacesController < ApplicationController
   	@place = Place.new(place_params)
   	if @place.save
   		redirect_to places_path
-  	else 
+  	else
   		redirect_to :back, notice: "There was a problem."
   	end
   end
@@ -22,7 +22,6 @@ class PlacesController < ApplicationController
   end
 
   private 
-
   def place_params
   	params.require(:place).permit(:name, :address, :zipcode, :website, :description, :avatar)
   end

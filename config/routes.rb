@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root 'places#index'
 
-  resources :places do
+  resources :places, only: [:create, :index, :new] do
   	resources :events, shallow: true do
   		member do
   			post 'join'

@@ -21,13 +21,15 @@
 		<h2>We make planning events around the city fun!</h2>
 	</div>
 
+
+
 	<div class="p-row row text-center">
 		<!-- <div class="col-xs-12 col-sm-2">
 		</div> -->
 		<% @places.each do |place| %>
 			<div class="col-xs-12 col-sm-12 p-box">
-				<h3><%= place.name %></h3>
-					<%= link_to (image_tag place.avatar.url(:medium), class: "img-responsive center-block"), new_place_event_path(place, continue: new_place_event_path(place)) %>
+				<%= link_to (image_tag place.avatar.url(:medium), class: "p-images img-responsive center-block", style: 'height:auto;width:100%;'), new_place_event_path(place, continue: new_place_event_path(place)) %>
+				<h3 class="p-title"><%= place.name %></h3>
 				<p class="p-description"><%= place.description %></p>
 			</div>
 		<% end %>

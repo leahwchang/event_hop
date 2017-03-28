@@ -13,53 +13,58 @@
 	</head>
 
 	<body>
-		<nav class="navbar">
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-						<span class="glyphicon glyphicon-align-justify"></span>
-		      </button>
-		      <ul class="navbar-brand" href="#">
-						EventHop
-						<span>
-							<% if current_user.fname %>
-								Welcome! <%= current_user.fname %>
-							<% end %>
-						</span>
-					</ul>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-					<% if user_signed_in? %>
-			      <ul class="nav navbar-nav navbar-right">
-							<li><%= link_to 'Home', places_path %></li>
-							<li>
-								<% if current_user[:admin] == true %>
-									<%= link_to 'Create New Place', new_place_path %>
+
+		<div id="wrap">
+
+			<nav class="navbar">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+							<span class="glyphicon glyphicon-align-justify"></span>
+			      </button>
+			      <ul class="navbar-brand" href="#">
+							EventHop
+							<span>
+								<% if current_user.fname %>
+									Welcome! <%= current_user.fname %>
 								<% end %>
-							</li>
-			        <li><%= link_to 'Profile', user_path(current_user.id) %></li>
-			        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-			      </ul>
-					<% else %>
-						<li><%= link_to 'Sign Up', new_user_registration_path %></li>
-						<li><%= link_to 'Log In', new_user_session_path %></li>
-					<% end %>
-		    </div>
+							</span>
+						</ul>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+						<% if user_signed_in? %>
+				      <ul class="nav navbar-nav navbar-right">
+								<li><%= link_to 'Home', places_path %></li>
+								<li>
+									<% if current_user[:admin] == true %>
+										<%= link_to 'Create New Place', new_place_path %>
+									<% end %>
+								</li>
+				        <li><%= link_to 'Profile', user_path(current_user.id) %></li>
+				        <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+				      </ul>
+						<% else %>
+							<li><%= link_to 'Sign Up', new_user_registration_path %></li>
+							<li><%= link_to 'Log In', new_user_session_path %></li>
+						<% end %>
+			    </div>
+			  </div>
+			</nav>
+
+		  <div id="main" class="clear-top">
+				<% if notice %>
+					<p class="notice"><%= notice %></p>
+				<% elsif alert %>
+					<p class="alert"><%= alert %></p>
+				<% end %>
+
+				<%= yield %>
 		  </div>
-		</nav>
+		</div>
 
-		<% if notice %>
-			<p class="notice"><%= notice %></p>
-		<% elsif alert %>
-			<p class="alert"><%= alert %></p>
-		<% end %>
-
-		<%= yield %>
-
-		<footer>
-			<div id="footernav">
+		<footer class="footer">
 				<br/>
-					<ul>
+					<!-- <ul>
 						<li>
 							<%= link_to image_tag("facebook.png"), "http://www.facebook.com" %>
 						</li>
@@ -69,8 +74,7 @@
 						<li>
 							<%= link_to image_tag("instagram.png"), "http://www.instagram.com" %>
 						</li>
-					</ul>
-			</div>
+					</ul> -->
 		</footer>
 
 		<script type="text/javascript">

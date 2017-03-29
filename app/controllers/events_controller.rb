@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     @place = @event.place
     @post = Post.new
 
-    # gmap below
+    # gmap
     @hash = Gmaps4rails.build_markers(@place) do |place, marker|
       marker.lat place.latitude
       marker.lng place.longitude
@@ -34,26 +34,25 @@ class EventsController < ApplicationController
         @emails.each do |email|
           EventMailer.invitation(current_user, email, @event).deliver_now
         end
-        redirect_to user_path(current_user.id), notice: "event saved"
+        redirect_to user_path(current_user.id), notice: "Event Saved!"
       else
-        redirect_to :back, notice: "there was a problem"
+        redirect_to :back, notice: "There was a Problem. Please Try Again."
       end
     else
 
       # need to not save the event when there is a problem
-
-      redirect_to :back, notice: "there was a problem"
+      redirect_to :back, notice: "There was a Problem. Please Try Again."
     end
   end
 
   def join
     @event.users << current_user
-    redirect_to @event, notice: "Added to event."
+    redirect_to @event, notice: "Thanks For Joining!"
   end
 
   def leave
    @event.users.delete(current_user)
-   redirect_to @event, notice: "Removed from event."
+   redirect_to @event, notice: "Sad To See You Go."
   end
 
   private

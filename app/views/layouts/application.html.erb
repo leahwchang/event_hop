@@ -9,7 +9,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	  <!-- google font -->
-		<link href="https://fonts.googleapis.com/css?family=Oleo+Script:700|Oswald:300,500" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Oleo+Script" rel="stylesheet">
 	</head>
 
 	<body>
@@ -23,7 +23,7 @@
 							<span class="glyphicon glyphicon-align-justify"></span>
 			      </button>
 			      <ul class="navbar-brand" href="#">
-							Event Hop
+							<%= link_to 'Event Hop', places_path %>
 							<span>
 								<% if user_signed_in? %>
 									<% if current_user.fname %>
@@ -55,11 +55,13 @@
 			</nav>
 
 		  <div id="main" class="clear-top">
-				<% if notice %>
-					<p class="notice"><%= notice %></p>
-				<% elsif alert %>
-					<p class="alert"><%= alert %></p>
-				<% end %>
+				<div class="message">
+					<% if flash[:notice] %>
+						<div class="notice"><%= flash[:notice] %></div>
+					<% elsif flash[:alert] %>
+						<div class="alert"><%= flash[:alert] %></div>
+					<% end %>
+				</div>
 
 				<%= yield %>
 		  </div>

@@ -17,8 +17,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// font-family: 'Josefin Sans', sans-serif;
+// font-family: 'Oleo Script', cursive;
 $headerfont: 'Oleo Script', cursive;
-$contentfont: 'Oswald', sans-serif;
+$contentfont: 'Josefin Sans', sans-serif;
 
 $a-tags: 'a, a:active, a:hover, a:visited, a:active, a:hover';
 
@@ -38,6 +40,31 @@ body {
 		#main {
 		  overflow: auto;
 		  padding-bottom: 100px; /* this needs to be bigger than footer height*/
+			.message {
+				text-align: center;
+				margin: auto;
+		    width: 30%;
+				.notice{
+					color: #d6e9c6;
+					background-color: #468847;
+					height: 40px;
+					font-size: 1.25em;
+					padding: .5em;
+					position: static;
+					text-align: center;
+					border-radius: 5px;
+				}
+				.alert{
+					color: #eed3d7;
+					background-color: #b94a48;
+					height: 40px;
+					font-size: 1.25em;
+					padding: .5em;
+					position: static;
+					text-align: center;
+					border-radius: 5px;
+				}
+			}
 		}
 	}
 }
@@ -50,13 +77,15 @@ body {
 		padding-left: 0;
 		padding-right: 0;
 		border: 0px;
-		overflow: hidden;
-		height: 100px;
-		.navbar-toggle {
-			margin-top: 5px;
-			.glyphicon-align-justify {
-				color: black;
-				top: 0;
+		.navbar-header {
+	    margin-left: 0px;
+	    margin-right: 0px;
+			.navbar-toggle {
+				margin-top: 5px;
+				.glyphicon-align-justify {
+					color: black;
+					top: 0;
+				}
 			}
 		}
 		.navbar-brand {
@@ -70,16 +99,26 @@ body {
 				color: black;
 			}
 		}
-		.navbar-right {
-			font-family: $contentfont;
-			font-weight: 300;
-			font-size: 1.2em;
-			li {
-				text-align: center;
+		.navbar-collapse {
+			border-bottom: 1px solid rgba(#00476b, 0.12);
+			.navbar-right {
+				font-family: $contentfont;
+				font-weight: 300;
+				font-size: 1.2em;
+				li {
+					text-align: center;
+					text-decoration: none;
+					a:hover {
+					  // color: #00476B;
+						text-decoration: none;
+						background-color: transparent;
+					}
+				}
 			}
 		}
 	}
 }
+
 
 /************ Footer ************/
 
@@ -101,45 +140,27 @@ body {
 	}
 }
 
-/************ Notices ************/
-
-.notice{
-	background-color: #78D95B;
-	height: 40px;
-	font-size: 1.25em;
-	padding: .5em;
-	color: white;
-	position: absolute;
-}
-
-.alert{
-	background-color: #D92F34;
-	height: 40px;
-	font-size: 1.25em;
-	padding: .5em;
-	color: white;
-	position: absolute;
-}
+/************ Events Join/Leave ************/
 
 .joinleave{
 	font-size: 1.5em;
-	/*margin-left: 20%;*/
-	font-family: 'Arial';
+	font-family: $contentfont;
 }
 
 .joinleave a{
-	color: #1FE023;
+	color: #468847;
 }
 
 #join a{
 	font-size: 1.5em;
-	color: #1FE023;
+	color: #468847;
 }
 
 /************ Links ************/
 
 #{$a-tags} {
   color: #00476B;
+	text-decoration: none;
 }
 
 /************ User Profile Page ************/

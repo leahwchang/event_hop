@@ -45,7 +45,10 @@ body {
 			.message {
 				text-align: center;
 				margin: auto;
-		    width: 30%;
+		    width: 60%;
+				@media screen and (max-width: $break-small) {
+					margin-bottom: 30px;
+				}
 				.notice{
 					color: #d6e9c6;
 					background-color: #468847;
@@ -117,6 +120,11 @@ body {
 	}
 }
 
+// ************ Page Title ************
+.pagetitle {
+	text-align: center;
+}
+
 // ************ Links ************
 #{$a-tags} {
   color: #00476B;
@@ -172,118 +180,4 @@ body {
   	border-radius: 20px;
   	font-size: 2em;
   }
-}
-
-// ************ Events Join/Leave ************
-.joinleave{
-	font-size: 1.5em;
-	font-family: $contentfont;
-}
-
-.joinleave a{
-	color: #468847;
-}
-
-#join a{
-	font-size: 1.5em;
-	color: #468847;
-}
-
-// ************ User Profile Page ************
-.container{
-	padding-top: 4em;
-}
-
-.event_info{
-	text-align: right;
-}
-
-.event_title{
-	font-family: 'Josefin Sans';
-	font-size: 4em;
-	/*margin-left: 12em;*/
-}
-
-.profilepic{
-	padding: 2em;
-}
-
-// ************ User Profile Page ************
-.pagetitle {
-	text-align: center;
-}
-
-// ************ Devise Forms ************
-.deviseforms {
-	width: 500px;
-	height: 470px;
-	margin: 0 auto;
-	text-align: center;
-}
-
-.signuplogin {
-	width: 500px;
-	text-align: center;
-	margin: 0 auto;
-	text-align: center;
-}
-
-// ************ Devise Forms ************
-#user_profilepic {
-	background-color: #FFFFFF;
-	margin: 0 auto;
-    text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-
-#user_fname {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_lname {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_email {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_password {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_password_confirmation {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-
-// ************ Devise Forms ************
-.signuplogin input[type=submit] {
-    background: transparent;
-  	border-radius: 20px;
-  	font-size: 2em;
 }

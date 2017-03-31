@@ -1,0 +1,110 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// font-family: 'Josefin Sans', sans-serif;
+// font-family: 'Oleo Script', cursive;
+$headerfont: 'Oleo Script', cursive;
+$contentfont: 'Josefin Sans', sans-serif;
+
+$a-tags: 'a, a:active, a:hover, a:visited, a:active, a:hover';
+
+$break-small: 736px;
+$break-medium: 769px;
+// $break-large: 1200px;
+
+// @media screen and (max-width: $break-small) {
+// 	margin-bottom: 30px;
+// }
+
+// ************ User Profile Page ************
+.u-container{
+	padding-top: 20px;
+	.u-profile {
+		border: 1px solid rgba(#00476b, 0.12);
+		padding: 10px;
+		text-align: left;
+		.profilepic{
+			padding: 1em;
+		}
+	}
+	.u-events {
+		border: 1px solid rgba(#00476b, 0.12);
+		text-align: right;
+	}
+}
+
+// // ************ Devise Forms ************
+// .deviseforms {
+// 	width: 500px;
+// 	height: 470px;
+// 	margin: 0 auto;
+// 	text-align: center;
+// }
+//
+// .signuplogin {
+// 	width: 500px;
+// 	text-align: center;
+// 	margin: 0 auto;
+// 	text-align: center;
+// }
+//
+// // ************ Devise Forms ************
+// #user_profilepic {
+// 	background-color: #FFFFFF;
+// 	margin: 0 auto;
+//     text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+//
+// #user_fname {
+// 	text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+// #user_lname {
+// 	text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+// #user_email {
+// 	text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+// #user_password {
+// 	text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+// #user_password_confirmation {
+// 	text-align: center;
+// 	font-size: 1.4em;
+//     width: 85%;
+//     height: 50%;
+//     padding: 0;
+//     border: 5px solid #ccc;
+// }
+//
+// // ************ Devise Forms ************
+// .signuplogin input[type=submit] {
+//     background: transparent;
+//   	border-radius: 20px;
+//   	font-size: 2em;
+// }

@@ -2,10 +2,8 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-3 col-sm-offset-2 u-profile">
 			<h1>Profile</h1>
-			<% if @user.fname %>
+			<% if @user.fname? %>
 				<%= "Hi " + @user.fname + "!" %>
-			<% elsif @user.fname ++ @user.lname %>
-				<%= "Hi " + @user.fname + " " + @user.lname + "!" %>
 			<% end %>
 
 			<% if @user.profilepic? %>

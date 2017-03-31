@@ -20,17 +20,89 @@ $break-medium: 769px;
 // ************ User Profile Page ************
 .u-container{
 	padding-top: 20px;
+	.row {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
 	.u-profile {
 		border: 1px solid rgba(#00476b, 0.12);
 		padding: 10px;
 		text-align: left;
+		margin-bottom: 20px;
 		.profilepic{
-			padding: 1em;
+			padding-top: 20px;
 		}
 	}
 	.u-events {
 		border: 1px solid rgba(#00476b, 0.12);
 		text-align: right;
+	}
+}
+
+// ************ Devise: User.new/User.edit ************
+.u-form {
+	text-align: center;
+	margin-top: 0;
+	border: 1px solid rgba(#00476b, 0.12);
+	@media screen and (max-width: $break-small) {
+		margin-left: 5px;
+		margin-right: 5px;
+	}
+	#user_fname {
+		text-align: center;
+		font-size: 1.4em;
+	  width: 85%;
+	  height: 50%;
+	  padding: 0;
+	  border: 3px solid #ccc;
+	}
+	#user_lname {
+		text-align: center;
+		font-size: 1.4em;
+	  width: 85%;
+	  height: 50%;
+	  padding: 0;
+	  border: 3px solid #ccc;
+	}
+	#user_email {
+		text-align: center;
+		font-size: 1.4em;
+	  width: 85%;
+	  height: 50%;
+	  padding: 0;
+	  border: 3px solid #ccc;
+	}
+	#user_password {
+		text-align: center;
+		font-size: 1.4em;
+	  width: 85%;
+	  height: 50%;
+	  padding: 0;
+	  border: 3px solid #ccc;
+	}
+	#user_password_confirmation {
+		text-align: center;
+		font-size: 1.4em;
+	  width: 85%;
+	  height: 50%;
+	  padding: 0;
+	  border: 3px solid #ccc;
+	}
+	#user_current_password {
+		text-align: center;
+		font-size: 1.4em;
+		width: 85%;
+		height: 50%;
+		padding: 0;
+		border: 3px solid #ccc;
+	}
+	.signuplogin {
+		text-align: center;
+		input[type=submit] {
+			background: transparent;
+			border-radius: 20px;
+			font-size: 2em;
+		}
 	}
 }
 
@@ -61,50 +133,7 @@ $break-medium: 769px;
 //     border: 5px solid #ccc;
 // }
 //
-// #user_fname {
-// 	text-align: center;
-// 	font-size: 1.4em;
-//     width: 85%;
-//     height: 50%;
-//     padding: 0;
-//     border: 5px solid #ccc;
-// }
-// #user_lname {
-// 	text-align: center;
-// 	font-size: 1.4em;
-//     width: 85%;
-//     height: 50%;
-//     padding: 0;
-//     border: 5px solid #ccc;
-// }
-// #user_email {
-// 	text-align: center;
-// 	font-size: 1.4em;
-//     width: 85%;
-//     height: 50%;
-//     padding: 0;
-//     border: 5px solid #ccc;
-// }
-// #user_password {
-// 	text-align: center;
-// 	font-size: 1.4em;
-//     width: 85%;
-//     height: 50%;
-//     padding: 0;
-//     border: 5px solid #ccc;
-// }
-// #user_password_confirmation {
-// 	text-align: center;
-// 	font-size: 1.4em;
-//     width: 85%;
-//     height: 50%;
-//     padding: 0;
-//     border: 5px solid #ccc;
-// }
+
+
+
 //
-// // ************ Devise Forms ************
-// .signuplogin input[type=submit] {
-//     background: transparent;
-//   	border-radius: 20px;
-//   	font-size: 2em;
-// }

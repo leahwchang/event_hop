@@ -9,7 +9,7 @@
 			<% end %>
 
 			<% if @user.profilepic? %>
-				<div class="profilepic"> <%= image_tag @user.profilepic.url(:medium) %></div><br>
+				<div class="profilepic"> <%= image_tag @user.profilepic.url(:medium), class: "center-block" %></div><br>
 			<% end %>
 			<br>
 			<%= link_to '<Update Profile>', edit_user_registration_path %>

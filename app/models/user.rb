@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_many :joined_events, through: :events_users, source: "event"
   has_many :posts
 
-  has_attached_file :profilepic, styles: { medium: "300x300#", thumb: "100x100#", icon: "35x35#" }, default_url: "/images/:style/missing.jpg"
+  has_attached_file :profilepic, styles: { medium: "200x200#", thumb: "100x100#", icon: "35x35#" }, default_url: "/images/:style/missing.jpg"
   validates_attachment_content_type :profilepic, content_type: /\Aimage\/.*\Z/
 end

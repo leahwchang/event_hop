@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+     sessions: 'users/sessions'
+   }
 
   root 'places#index'
 
@@ -15,5 +17,8 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show]
+  as :user do
+    get 'users', :to => 'users#show', :as => :user_root # Rails 3
+  end
 
 end

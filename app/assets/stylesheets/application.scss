@@ -45,14 +45,16 @@ body {
 			.message {
 				text-align: center;
 				margin: auto;
-		    width: 60%;
+		    width: 50%;
+        height: 40px;
 				@media screen and (max-width: $break-small) {
+  		    width: 80%;
+          height: 80px;
 					margin-bottom: 30px;
 				}
 				.notice{
 					color: #d6e9c6;
 					background-color: #468847;
-					height: 40px;
 					font-size: 1.25em;
 					padding: .5em;
 					position: static;
@@ -62,7 +64,6 @@ body {
 				.alert{
 					color: #eed3d7;
 					background-color: #b94a48;
-					height: 40px;
 					font-size: 1.25em;
 					padding: .5em;
 					position: static;

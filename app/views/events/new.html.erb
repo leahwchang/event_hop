@@ -4,21 +4,21 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-4 col-md-offset-1">
-			<h3>Event Hop Location:</h3>
-		<div class="eventinfo">
-			<h3> <%= @place.name %> </h3>
-			<h4> <%= @place.address %></h4>
-			<h4> <%= @place.website %></h4>
-			<h4> <%= @place.description %> </h4>
-			<br>
-			<h4> <%= image_tag @place.avatar.url(:medium) %> </h4>
-		</div>
+		<div class="col-xs-12 col-sm-4 col-sm-offset-1">
+			<div class="eventinfo">
+				<h3 class="place-name"> <%= @place.name %> </h3>
+				<br>
+				<h4> <%= @place.address %></h4>
+				<h4> <%= @place.website %></h4>
+				<h4> <%= @place.description %> </h4>
+				<br>
+				<h4> <%= image_tag @place.avatar.url(:medium), class: "img-responsive center-block" %> </h4>
+			</div>
 		</div>
 
-		<div class="col-xs-6">
-			<h3>Simply Select a Time and Day to Create the Event</h3>
-			<h3>Include the emails of your friends to send out invites for them to join!</h3>
+		<div class="col-xs-12 col-sm-6 text-center">
+			<h3>Select a Time to Create the Event</h3>
+			<h3>Include Emails of Your Friends and Send Out Invites!</h3>
 			<div class="eventform">
 				<%= form_for [@place, @event] do |f| %>
 				<div class="form">
@@ -43,6 +43,5 @@
 				<% end %>
 			</div>
 		</div>
-
 	</div>
 </div>

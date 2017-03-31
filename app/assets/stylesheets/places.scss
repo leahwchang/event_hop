@@ -11,6 +11,8 @@ $break-small: 736px;
 $break-medium: 769px;
 // $break-large: 1200px;
 
+
+// ************ root: Place.Index ************
 .p-container.container-fluid {
 	@media screen and (max-width: $break-small) {
     padding-left: 0px;
@@ -113,5 +115,16 @@ $break-medium: 769px;
 				}
 			}
 		}
+	}
+}
+
+// ************ Place.New ************
+// create new place: place.new form -> see application.scss
+.place-form {
+	margin-top: 0;
+	border: 1px solid rgba(#00476b, 0.12);
+	@media screen and (max-width: $break-small) {
+		margin-left: 5px;
+		margin-right: 5px;
 	}
 }

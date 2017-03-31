@@ -1,31 +1,27 @@
-<div class="event">
-	<div class="pagetitle">
-		<h1><%= @place.name %></h1>
-	</div>
-
-	<div class="eventdescription">
-		<p><%= @event.description %></p>
-	</div>
+<div class="pagetitle">
+	<h1 class="event-title"><%= @place.name %></h1>
+	<span class="eventdescription">
+		"<%= @event.description %>"
+	</span>
 </div>
 
-<div class="container">
-
-	<div class="table">
-		<div class="row">
-			<div class="col-md-4">
-				<h3>People Going!</h3>
+<div class="container e-container">
+	<div class="row is-table">
+		<div class="col-xs-12 col-sm-3 col-sm-offset-1">
+			<div class="attending">
+				<h3>Attendees</h3>
 				<% @event.users.each do |user| %>
-					<div class="attending"> <%= user.email %> </div>
-					<hr>
+					<%= user.email %>
 				<% end %>
+				<hr>
 				<%= render 'join_eventform' %>
 			</div>
+		</div>
 
-			<div class="col-md-8">
-				<div class="gmaps">
-					<div id="map-container">
-					  <div id="map-canvas"></div>
-					</div>
+		<div class="col-xs-12 col-sm-7">
+			<div class="gmaps">
+				<div id="map-container">
+				  <div id="map-canvas"></div>
 				</div>
 			</div>
 		</div>
@@ -33,14 +29,9 @@
 </div>
 
 <div class="container">
-	<div class="table">
-		<div class="row">
-			<div class="col-md-1"></div>
-		<!-- Shows all the posts for this event -->
-		<div class="col-md-10">
+	<div class="row">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
 			<%= render 'form' %>
-		</div>
-		<!-- Shows all the posts for this event -->
 		</div>
 	</div>
 </div>

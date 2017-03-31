@@ -2,22 +2,89 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$headerfont: 'Josefin Sans', sans-serif;
-$taglinefont: 'Helvetica';
+$headerfont: 'Oleo Script', cursive;
+$contentfont: 'Josefin Sans', sans-serif;
 
-// -----------  Event Show Page ------------ //
-.event{
+$a-tags: 'a, a:active, a:hover, a:visited, a:active, a:hover';
+
+$break-small: 736px;
+$break-medium: 769px;
+// $break-large: 1200px;
+
+// ************ Event.New ************
+// event.new form -> see application.scss for common form inputs
+.row {
 	text-align: center;
+	.col-sm-4 {
+		.eventinfo {
+			border: 1px solid rgba(#00476b, 0.12);
+			text-align: center;
+			padding: 10px;
+			h3 {
+				font-family: $headerfont;
+			}
+			h4 {
+			  color: black;
+			}
+		}
+	}
+	.col-sm-6 {
+		h3 {
+			color: black;
+		}
+		.eventform{
+			border: 1px solid rgba(#00476b, 0.12);
+			text-align: center;
+			margin-top: 2em;
+			padding: 1em;
+			width: 100%;
+			select {
+				border: 1px solid rgba(#00476b, 0.12);
+			}
+		}
+	}
 }
 
-.eventdescription{
-	font-size: 1.5em;
-	font-family: $taglinefont;
+// ************ Event.Show ************
+.pagetitle{
+	.event-title {
+		font-family: $headerfont;
+	}
+	.eventdescription{
+		font-size: 1.5em;
+		font-family: $contentfont;
+	}
 }
 
-.attending{
-	font-size: 1.3em;
-	margin-top: 1em;
+.e-container {
+	padding-left: 15px;
+	padding-right: 15px;
+	.is-table {
+		margin: 0 auto;
+		.attending{
+			border: 1px solid rgba(#00476b, 0.12);
+			font-size: 1.3em;
+			vertical-align: middle;
+			padding: 15px;
+			@media screen and (max-width: $break-small) {
+				margin-bottom: 30px;
+			}
+		}
+		.gmaps {
+			#map-container {
+				height: 400px;
+				border-radius: 16px 16px;
+				border-color: #fff;
+				border-style: solid;
+				border-width: 7px;
+			}
+			#map-canvas {
+				height: 384px;
+				width: 100%;
+				border-radius: 16px 16px;
+			}
+		}
+	}
 }
 
 .thumb_pic{
@@ -26,69 +93,37 @@ $taglinefont: 'Helvetica';
 	display: inline-block;
 }
 
-#map-container {
-	height: 400px;
-	border-radius: 16px 16px;
-	border-color: #fff;
-	border-style: solid;
-	box-shadow: 2px 2px 10px #B1B1B1;
-	margin-top: 25px;
-	border-width: 7px;
-}
-
-#map-canvas {
-	height: 384px;
-	width: 100%;
-}
-
-/* Bootstrap Css Map Fix*/
-#map-container #map-canvas img {
-  max-width: none;
-}
-/* Bootstrap Css Map Fix*/
-#map-container #map-canvas label {
-  width: auto; display:inline;
-}
-
 .mainchat{
-	// margin: 1em 5em 0 20%;
 	padding: 0;
 	background-color: #FBFAFC;
-	box-shadow: 5px 5px 2px #D9D9D9;
-
+	border: 1px solid rgba(#00476b, 0.12);
 	.chatheader{
 		height: 35px;
 		width: 100%;
 		background-color: #99AFEE;
 	}
-
 	p {
 		display: inline-block;
 		margin: 0;
 		margin-left: 1em;
 		font-size: 1.3em;
 	}
-
 	.datetime{
 		// float: right;
 		margin-right: 1em;
 	}
-
 	.chatbreak{
 		margin: 1em;
 		border-color: #D8D8D8;
 	}
-
 	.postbody{
 		color: black;
 	}
-
 	.comments{
 		max-height: 450px;
 		max-width: 100%;
 		overflow: scroll;
 	}
-
 	.chatbox {
 	text-align: center;
 	padding: 1em;
@@ -99,70 +134,22 @@ $taglinefont: 'Helvetica';
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 	font-size: 1em;
-
 		#post_body{
 			resize: none;
 			font-size: 2em;
 			text-align: center;
+			border: 1px solid rgba(#00476b, 0.12);
+	    width: 256px;
 		}
-
 		input[type=submit]{
-			 border: 1px solid #336699;
+			border: 1px solid #336699;
 	    color: #ffffff;
 	    background: #336699;
 	    padding: 10px 20px;
 	    border-radius: 3px;
 	  }
-
 	  textarea{
 	  	width: 60%;
 	  }
 	}
 }
-
-
-// -----------  Event Show Page ------------ //
-
-
-// -----------  Create Event Page ------------ //
-.col-md-4{
-	text-align: center;
-}
-
-.eventinfo{
-	text-align: center;
-	border: solid black 1px;
-}
-
-.eventform{
-	text-align: center;
-	margin-top: 2em;
-	padding: 1em;
-	width: 100%;
-	border: solid black 1px;
-	// border-radius: 30px;
-}
-
-.form{
-	font-size: 1.3em;
-	border-bottom: solid black 1px;
-	padding: 2em;
-	margin: 1em;
-
-	input[type="text"],
-	textarea {
-		text-align: center;
-		font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-    }
-
-  input[type="submit"] {
-  	background: transparent;
-  	border-radius: 20px;
-  	font-size: 2em;
-  }
-}
-// -----------  Create Event Page ------------ //

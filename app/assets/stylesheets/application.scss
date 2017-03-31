@@ -24,7 +24,9 @@ $contentfont: 'Josefin Sans', sans-serif;
 
 $a-tags: 'a, a:active, a:hover, a:visited, a:active, a:hover';
 
-$break-small: 376px;
+$break-small: 736px;
+$break-medium: 769px;
+// $break-large: 1200px;
 
 html {
   height: 100%;
@@ -69,8 +71,7 @@ body {
 	}
 }
 
-/************ Nav Bar ************/
-
+// ************ Nav Bar ************
 .navbar {
 	border: 0px;
 	.container-fluid {
@@ -107,10 +108,7 @@ body {
 				font-size: 1.2em;
 				li {
 					text-align: center;
-					text-decoration: none;
 					a:hover {
-					  // color: #00476B;
-						text-decoration: none;
 						background-color: transparent;
 					}
 				}
@@ -119,9 +117,13 @@ body {
 	}
 }
 
+// ************ Links ************
+#{$a-tags} {
+  color: #00476B;
+	text-decoration: none;
+}
 
-/************ Footer ************/
-
+// ************ Footer ************
 .footer {
   position: relative;
   margin-top: -70px; /* negative value of footer height */
@@ -140,8 +142,39 @@ body {
 	}
 }
 
-/************ Events Join/Leave ************/
+// ************ Forms ************
+// ************ Common Input Fields ************
+.form{
+	font-size: 1.3em;
+	border-bottom: solid black 1px;
+	padding: 2em;
+	margin: 1em;
+	label {
+	  display: block;
+	}
+	input[type="file"] {
+    display: block;
+	  width: 100%;
+    border: 3px solid #ccc;
+    background-color: white;
+	}
+	input[type="text"],
+	textarea {
+		text-align: center;
+		font-size: 1.4em;
+    width: 85%;
+    height: 50%;
+    padding: 0;
+    border: 3px solid #ccc;
+  }
+  input[type="submit"] {
+  	background: transparent;
+  	border-radius: 20px;
+  	font-size: 2em;
+  }
+}
 
+// ************ Events Join/Leave ************
 .joinleave{
 	font-size: 1.5em;
 	font-family: $contentfont;
@@ -156,15 +189,7 @@ body {
 	color: #468847;
 }
 
-/************ Links ************/
-
-#{$a-tags} {
-  color: #00476B;
-	text-decoration: none;
-}
-
-/************ User Profile Page ************/
-
+// ************ User Profile Page ************
 .container{
 	padding-top: 4em;
 }
@@ -183,14 +208,12 @@ body {
 	padding: 2em;
 }
 
-/************ User Profile Page ************/
-
+// ************ User Profile Page ************
 .pagetitle {
 	text-align: center;
 }
 
-/************ Devise Forms ************/
-
+// ************ Devise Forms ************
 .deviseforms {
 	width: 500px;
 	height: 470px;
@@ -205,8 +228,7 @@ body {
 	text-align: center;
 }
 
-/************ Devise Forms ************/
-
+// ************ Devise Forms ************
 #user_profilepic {
 	background-color: #FFFFFF;
 	margin: 0 auto;
@@ -259,8 +281,7 @@ body {
     border: 5px solid #ccc;
 }
 
-/************ Devise Forms ************/
-
+// ************ Devise Forms ************
 .signuplogin input[type=submit] {
     background: transparent;
   	border-radius: 20px;

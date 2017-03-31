@@ -17,238 +17,168 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// font-family: 'Josefin Sans', sans-serif;
+// font-family: 'Oleo Script', cursive;
+$headerfont: 'Oleo Script', cursive;
+$contentfont: 'Josefin Sans', sans-serif;
+
+$a-tags: 'a, a:active, a:hover, a:visited, a:active, a:hover';
+
+$break-small: 736px;
+$break-medium: 769px;
+// $break-large: 1200px;
+
+html {
+  height: 100%;
+}
+
 body {
 	background-color: #F7F7F7;
 	font-family: 'Josefin Sans', sans-serif;
 	color: #00476B;
-}
-
-#footernav {
-	width: 400px;
-	margin: 0 auto;
-}
-
-/************* Notices ************/
-
-.notice{
-	background-color: #78D95B;
-	height: 40px;
-	font-size: 1.25em; 
-	padding: .5em;
-	color: white;
-}
-
-.alert{
-	background-color: #D92F34;
-	height: 40px;
-	font-size: 1.25em; 
-	padding: .5em;
-	color: white;
-}
-
-.joinleave{
-	font-size: 1.5em;
-	/*margin-left: 20%;*/
-	font-family: 'Arial';
-}
-
-.joinleave a{
-	color: #1FE023;
-}
-
-#join a{
-	font-size: 1.5em;
-	color: #1FE023;
-}
-
-/************* Notices ************/
-
-/************* Nav Bar ************/
-
-.headernav {
-	font-size: 1.2em;
-	height: 3.5em;
-	border-bottom: solid #EAEAEA 1px; 
-}
-
-.headernav ul{
-	padding: 1em;
-	color: #7F8286;
-	overflow: hidden;
-}
-
-.link{
-	display: inline-block;
 	height: 100%;
-	text-decoration: none;
+	#wrap {
+	  min-height: 100%;
+		#main {
+		  overflow: auto;
+		  padding-bottom: 100px; /* this needs to be bigger than footer height*/
+			.message {
+				text-align: center;
+				margin: auto;
+		    width: 50%;
+        height: 40px;
+				@media screen and (max-width: $break-small) {
+  		    width: 80%;
+          height: 80px;
+					margin-bottom: 30px;
+				}
+				.notice{
+					color: #d6e9c6;
+					background-color: #468847;
+					font-size: 1.25em;
+					padding: .5em;
+					position: static;
+					text-align: center;
+					border-radius: 5px;
+				}
+				.alert{
+					color: #eed3d7;
+					background-color: #b94a48;
+					font-size: 1.25em;
+					padding: .5em;
+					position: static;
+					text-align: center;
+					border-radius: 5px;
+				}
+			}
+		}
+	}
 }
 
-.link{
-	background-color: #ADADAD;
-	border-radius: 5px;
-	padding: .3em;
-	text-decoration: none;
-	float: right;
-	margin-right: .8em;
+// ************ Nav Bar ************
+.navbar {
+	border: 0px;
+	.container-fluid {
+		padding-left: 0;
+		padding-right: 0;
+		border: 0px;
+		.navbar-header {
+	    margin-left: 0px;
+	    margin-right: 0px;
+			.navbar-toggle {
+				margin-top: 5px;
+				.glyphicon-align-justify {
+					color: black;
+					top: 0;
+				}
+			}
+		}
+		.navbar-brand {
+			padding-left: 25px;
+			font-family: $headerfont;
+			font-size: 1.7em;
+			span {
+				font-family: $contentfont;
+				font-weight: 300;
+				font-size: .7em;
+				color: black;
+			}
+		}
+		.navbar-collapse {
+			border-bottom: 1px solid rgba(#00476b, 0.12);
+			.navbar-right {
+				font-family: $contentfont;
+				font-weight: 300;
+				font-size: 1.2em;
+				li {
+					text-align: center;
+					a:hover {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
 }
 
-.link:hover{
-	background-color: #82E0DE;
-}
-
-.headernav ul a{
-	color: #FDFFF1;
-	padding: .5em;
-}
-
-/************* Nav Bar ************/
-
-/************* Footer ************/
-
-footer{
-	background-color: #ADADAD;
-	clear: both;
-	height: 80px;
-	margin-top: 15px;
-}
-
-#footernav li {
-	margin-left: 15px;
-	display: inline-block;
-	list-style-type: none;
-	font-size: 1em;
-}
-
-#footernav ul li a img {
-	display: inline-block;
-	margin-left: 15px;
-	margin-top: -5px;
-	width: 50px;
-	height: 50px;
-}
-
-/************* Footer ************/
-
-/************* User Profile Page ************/
-
-.container{
-	padding-top: 4em;
-}
-
-.event_info{
-	text-align: right;
-}
-
-.event_title{
-	font-family: 'Josefin Sans';
-	font-size: 4em;
-	/*margin-left: 12em;*/
-}
-
-.profilepic{
-	padding: 2em;
-}
-
-/************* User Profile Page ************/
-
+// ************ Page Title ************
 .pagetitle {
 	text-align: center;
 }
 
-/*************** Devise Forms  **************/
-
-.deviseforms {
-	width: 500px;
-	height: 470px;
-	margin: 0 auto;
-	text-align: center;
+// ************ Links ************
+#{$a-tags} {
+  color: #00476B;
+	text-decoration: none;
 }
 
-.signuplogin {
-	width: 500px;
-	text-align: center;
-	margin: 0 auto;
-	text-align: center;
+// ************ Footer ************
+.footer {
+  position: relative;
+  margin-top: -70px; /* negative value of footer height */
+  height: 100px;
+  clear:both;
+  padding-top: 20px;
+	ul {
+		margin-left: 0px;
+		li {
+			width: 50px;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
 }
 
-/************* Devise Forms ***************/
-
-#user_profilepic {
-	background-color: #FFFFFF;
-	margin: 0 auto;
-    text-align: center;
-	font-size: 1.4em;
+// ************ Forms ************
+// ************ Common Input Fields ************
+.form{
+	font-size: 1.3em;
+	border-bottom: solid black 1px;
+	padding: 2em;
+	margin: 1em;
+	label {
+	  display: block;
+	}
+	input[type="file"] {
+    display: block;
+	  width: 100%;
+    border: 3px solid #ccc;
+    background-color: white;
+	}
+	input[type="text"],
+	textarea {
+		text-align: center;
+		font-size: 1.4em;
     width: 85%;
     height: 50%;
     padding: 0;
-    border: 5px solid #ccc;
-}
-
-#user_fname {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_lname {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_email {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_password {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-#user_password_confirmation {
-	text-align: center;
-	font-size: 1.4em;
-    width: 85%;
-    height: 50%;
-    padding: 0;
-    border: 5px solid #ccc;
-}
-
-/************* Devise Forms ***************/
-
-.signuplogin input[type=submit] {
-    background: transparent;
+    border: 3px solid #ccc;
+  }
+  input[type="submit"] {
+  	background: transparent;
   	border-radius: 20px;
   	font-size: 2em;
+  }
 }
-/*************** Devise Forms  **************/
-
-
-/*************** Countdown Clock  **************/
-
-.countdown{
-	padding: 1em;
-	margin-left: 65%;
-}
-
-#clockdiv {
-	font-size: 1.5em;
-	font-style: oblique;
-}
-
-/*************** Countdown Clock  **************/
-
-
-
-

@@ -1,14 +1,18 @@
-<div class="p-wrap">
-	<div class="p-title">
-		<h1>Event Hop</h1>
-		<h2>We make planning events around the city fun!</h2>
+<div class="p-container container-fluid">
+	<div class="row text-center header">
+		<p class="p-header">Event Hop</p>
+		<p class="p-tagline">We make planning events around the city fun!</p>
 	</div>
 
-	<% @places.each do |place| %>
-	<div class="p-places">
-		<h3><%= place.name %></h3>
-		<%= link_to (image_tag place.avatar.url(:medium)), new_place_event_path(place, continue: new_place_event_path(place)) %>
-		<p class="p-description"><%= place.description %></p>
-	</div>
+	<% @places.each_slice(3) do |place| %>
+	  <div class="p-row row text-center">
+	    <% place.each do |place| %>
+				<div class="col-xs-12 col-sm-4 p-box">
+					<p class="p-title"><%= place.name %></p>
+					<%= link_to (image_tag place.avatar.url(:medium), class: "p-images img-responsive center-block", style: 'height:auto;width:100%;'), new_place_event_path(place, continue: new_place_event_path(place)) %>
+					<p class="p-description"><%= place.description %></p>
+				</div>
+	    <% end %>
+	  </div>
 	<% end %>
 </div>

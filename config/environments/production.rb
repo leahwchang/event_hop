@@ -29,7 +29,7 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   config.assets.compress = true
-  config.assets.compile = false
+  # config.assets.compile = false
   config.assets.initialize_on_precompile = false
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   # config.assets.compile = true
@@ -82,6 +82,7 @@ Rails.application.configure do
 
 
   config.serve_static_files = true
+  config.assets.compile = true
 
   config.action_mailer.default_url_options = { :host => "http://leah-eventhop.herokuapp.com" }
 
